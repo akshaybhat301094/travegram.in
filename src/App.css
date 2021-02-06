@@ -1,0 +1,122 @@
+.loader {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  cursor: pointer;
+}
+
+.loader img {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  z-index: 1;
+}
+
+.loader img::hover {
+  transform: scale(0.5);
+  opacity: 0.5;
+}
+
+.loader--hide {
+  opacity: 0;
+}
+
+/* Animaciones */
+
+@keyframes ripple {
+  0% {
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    opacity: 1;
+  }
+  66% {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+  100% {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+  }
+}
+.spinner-container {
+  width: 200px;
+  height: 200px;
+}
+
+/* Efecto 1 (ripple) */
+.spinner-ripple {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.spinner-ripple > div {
+  position: absolute;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.spinner-ripple > div:first-child {
+  animation: ripple 2s infinite linear;
+}
+
+.spinner-ripple > div:nth-child(2) {
+  animation: ripple 2s infinite linear 0.5s;
+}
+
+.spinner-ripple > div:nth-child(3) {
+  animation: ripple 2s infinite linear 1s;
+}
+
+.spinner-ripple > div:nth-child(4) {
+  animation: ripple 2s infinite linear 1.5s;
+}
+
+/* Efecto 2 (pulse) */
+
+.spinner-pulse {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.spinner-pulse > div {
+  position: absolute;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.spinner-pulse > div:first-child {
+  animation: pulse 3s infinite linear;
+}
+
+.spinner-pulse > div:last-child {
+  animation: pulse 3s infinite linear 1s;
+}
